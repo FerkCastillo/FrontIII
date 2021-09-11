@@ -54,7 +54,7 @@ class Main extends Component {
           opcionB={data[this.state.contador].opciones.b}
         />
         <Historial
-          seleccionPrevia={this.state.seleccionPrevia}
+          respuestaAnterior={this.state.respuestaAnterior}
           historial={historial.map((opcion, index) => (<li key={index}>{opcion}</li>),
           )} />
       </div>
