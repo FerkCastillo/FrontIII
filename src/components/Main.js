@@ -11,13 +11,13 @@ class Main extends Component {
     super(props);
     this.state = {
       contador: 0,
-      seleccionPrevia: null,
+      respuestaAnterior: null,
     };
   }
 
   componentDidUpdate(prevState) {
     if (prevState.contador !== this.state.contador) {
-      historial.push(this.state.seleccionPrevia);
+      historial.push(this.state.respuestaAnterior);
     }
   }
 
@@ -26,24 +26,20 @@ class Main extends Component {
     if (this.state.contador >= 7) {
       alert("¡La historia finalizó!");
      
-    } else if (id === "A" && this.state.seleccionPrevia !== "A") {
-      this.setState({
-        contador: this.state.contador + 1,
-        seleccionPrevia: "A",
+    } else if (id === "A" && this.state.respuestaAnterior !== "A") {
+      this.setState({contador: this.state.contador + 1,
+        respuestaAnterior: "A",
       });
-    } else if (id === "A" && this.state.seleccionPrevia === "A") {
-      this.setState({
-        contador: this.state.contador + 2,
+    } else if (id === "A" && this.state.respuestaAnterior === "A") {
+      this.setState({contador: this.state.contador + 2,
       });
-    } else if (id === "B" && this.state.seleccionPrevia === "A") {
-      this.setState({
-        contador: this.state.contador + 3,
-        seleccionPrevia: "B",
+    } else if (id === "B" && this.state.respuestaAnterior === "A") {
+      this.setState({contador: this.state.contador + 3,
+        respuestaAnterior: "B",
       });
     } else if (id === "B") {
-      this.setState({
-        contador: this.state.contador + 2,
-        seleccionPrevia: "B",
+      this.setState({contador: this.state.contador + 2,
+        respuestaAnterior: "B",
       });
     }
   };

@@ -6,7 +6,7 @@ class Historial extends Component {
 
     return (
       <div className ="recordatorio">
-        <h3> Última elección: {this.props.seleccionPrevia} </h3>
+        <h3> Última elección: {this.props.respuestaAnterior} </h3>
         <h3> Historial: </h3>
         <ul> {this.props.historial} </ul>
       </div>
